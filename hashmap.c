@@ -131,6 +131,7 @@ Pair * nextMap(HashMap * map) {
     long i = map->current + 1;
     while (map->buckets[i] == NULL) i++;
 
+    map->current = i;
     Pair *currentPair = map->buckets[i];
     return currentPair;
 }
