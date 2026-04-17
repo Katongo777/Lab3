@@ -74,8 +74,8 @@ Pair * searchMap(HashMap * map,  char * key) {
     long i = hash(key, map->capacity);
     while (is_equal(key, map->buckets[i]->key) == 0 || map->buckets[i] != NULL)
     {
-        if (i == map->capacity) i = 0;
         i++;
+        if (i == map->capacity) i = 0;
     }
     Pair *buscado = map->buckets[i];
     map->current = i;
