@@ -72,9 +72,10 @@ void insertMap(HashMap * map, char * key, void * value) {
 Pair * searchMap(HashMap * map,  char * key) {   
     if (map->size == 0 || map == NULL ) return NULL;
     long i = hash(key, map->capacity);
-    while (is_equal(key, map->buckets[i]->key) == 0 && map->buckets[i] != NULL)
+    while (is_equal(key, map->buckets[i]->key) == 0)
     {
         i++;
+        if (map->buckets[i] == NULL) return NULL;
         if (i == map->capacity) i = 0;
     }
     Pair *buscado = map->buckets[i];
