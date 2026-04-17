@@ -93,3 +93,9 @@ hashmap.c:76:21: error: initialization of ‘Pair *’ from incompatible pointer
    76 |     Pair *buscado = map->buckets[i]->key;
       |                     ^~~
 6a29cac
+Fri Apr 17 07:15:22 PM UTC 2026: 
+ hashmap.c | 8 ++++++--
+ 1 file changed, 6 insertions(+), 2 deletions(-)
+ tests:  0|7
+total_score: 0/60
+60d1483
