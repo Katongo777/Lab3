@@ -264,3 +264,9 @@ hashmap.c:108:6: note: declared here
   108 | void eraseMap(HashMap * map,  char * key) {
       |      ^~~~~~~~
 2453d84
+Fri Apr 17 10:22:56 PM UTC 2026: 
+ hashmap.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+ tests:  12|2
+total_score: 40/60
+2842e9e
