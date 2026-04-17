@@ -1,0 +1,17 @@
+Fri Apr 17 07:09:13 PM UTC 2026: 
+ hashmap.c | 5 +++++
+ 1 file changed, 5 insertions(+)
+Compilation failed
+In file included from test.c:5:
+hashmap.c: In function ‘searchMap’:
+hashmap.c:75:16: error: comparison of distinct pointer types lacks a cast [-Werror=compare-distinct-pointer-types]
+   75 |     while (key == map->buckets[i] || map->buckets[i] == NULL) i++;
+      |                ^~
+hashmap.c:77:5: error: expected ‘,’ or ‘;’ before ‘return’
+   77 |     return buscado;
+      |     ^~~~~~
+hashmap.c:76:11: error: unused variable ‘buscado’ [-Werror=unused-variable]
+   76 |     Pair *buscado = map->buckets[i]
+      |           ^~~~~~~
+cc1: all warnings being treated as errors
+2debd1b
