@@ -217,3 +217,9 @@ hashmap.c:70:38: error: expected expression before ‘)’ token
    70 |     while (map->buckets[i] == NULL &&)
       |                                      ^
 705d930
+Fri Apr 17 10:06:09 PM UTC 2026: 
+ hashmap.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+ tests:  2|6
+total_score: 5/60
+e3bf2b9
