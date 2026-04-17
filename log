@@ -189,3 +189,17 @@ Fri Apr 17 09:44:25 PM UTC 2026:
  tests:  4|5
 total_score: 15/60
 958ccad
+Fri Apr 17 09:56:29 PM UTC 2026: 
+ hashmap.c | 7 ++++++-
+ 1 file changed, 6 insertions(+), 1 deletion(-)
+Compilation failed
+In file included from test.c:5:
+hashmap.c: In function ‘insertMap’:
+hashmap.c:67:8: error: ‘M’ undeclared (first use in this function)
+   67 |     if(M->size >= 0.7*M->capacity) enlarge(map);
+      |        ^
+hashmap.c:67:8: note: each undeclared identifier is reported only once for each function it appears in
+hashmap.c:69:14: error: initialization of ‘long int’ from ‘Pair *’ makes integer from pointer without a cast [-Wint-conversion]
+   69 |     long i = searchMap(map, key);
+      |              ^~~~~~~~~
+754abeb
