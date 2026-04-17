@@ -73,7 +73,7 @@ Pair * searchMap(HashMap * map,  char * key) {
     if (map->size == 0) return NULL;
     long i = hash(key, map->capacity);
     while (strcmp(key, map->buckets[i]) == 0 || map->buckets[i] == NULL) i++;
-    Pair *buscado = map->buckets[i];
+    Pair *buscado = map->buckets[i]->key;
     return buscado;
     
     return NULL;

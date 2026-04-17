@@ -57,3 +57,22 @@ In file included from test.c:3:
   156 | extern int strcmp (const char *__s1, const char *__s2)
       |                                      ~~~~~~~~~~~~^~~~
 79ecadb
+Fri Apr 17 07:13:11 PM UTC 2026: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+Compilation failed
+In file included from test.c:5:
+hashmap.c: In function ‘searchMap’:
+hashmap.c:75:36: error: passing argument 2 of ‘strcmp’ from incompatible pointer type [-Wincompatible-pointer-types]
+   75 |     while (strcmp(key, map->buckets[i]) == 0 || map->buckets[i] == NULL) i++;
+      |                        ~~~~~~~~~~~~^~~
+      |                                    |
+      |                                    Pair *
+In file included from test.c:3:
+/nix/store/41pf3md9zgpda9kwh6rzn5kaddf7i0lp-glibc-2.40-66-dev/include/string.h:156:50: note: expected ‘const char *’ but argument is of type ‘Pair *’
+  156 | extern int strcmp (const char *__s1, const char *__s2)
+      |                                      ~~~~~~~~~~~~^~~~
+hashmap.c:76:21: error: initialization of ‘Pair *’ from incompatible pointer type ‘char *’ [-Wincompatible-pointer-types]
+   76 |     Pair *buscado = map->buckets[i]->key;
+      |                     ^~~
+c2ea925
