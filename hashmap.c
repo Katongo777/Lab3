@@ -64,7 +64,7 @@ HashMap * createMap(long capacity) {
 // No inserte claves repetidas. Recuerde que el arreglo es circular. Recuerde actualizar la variable size.
 
 void insertMap(HashMap * map, char * key, void * value) {
-    if (map == NULL ) return;
+    if (map == NULL) return;
     if(map->size >= 0.7*map->capacity) enlarge(map);
     Pair *newPair = createPair(key, value);
     long i = hash(key, map->capacity);
@@ -86,7 +86,7 @@ void insertMap(HashMap * map, char * key, void * value) {
 // Recuerde actualizar el índice current a la posición encontrada. Recuerde que el arreglo es circular.
 
 Pair * searchMap(HashMap * map,  char * key) {
-    if (map == NULL ) return NULL;
+    if (map == NULL || map->size == 0) return NULL;
     if (map->size == 0 || map == NULL ) return NULL;
     long i = hash(key, map->capacity);
     while (map->buckets[i] != NULL && is_equal(key, map->buckets[i]->key) == 0)
@@ -106,7 +106,7 @@ Pair * searchMap(HashMap * map,  char * key) {
 // Recuerde actualizar la variable size.
 
 void eraseMap(HashMap * map,  char * key) {
-    if (map == NULL ) return;
+    if (map == NULL || map->size == 0) return;
     Pair *deletePair = searchMap(map, key);
     if (deletePair == NULL) return;
     deletePair->key = NULL;
@@ -118,7 +118,7 @@ void eraseMap(HashMap * map,  char * key) {
 // Recuerde actualizar el índice.
 
 Pair * firstMap(HashMap * map) {
-    if (map->size == 0 || map == NULL ) return NULL;
+    if (map == NULL || map->size == 0) return NULL;
     long i = 0;
     while (map->buckets[i] == NULL) i++;
 
@@ -127,7 +127,7 @@ Pair * firstMap(HashMap * map) {
 }
 
 Pair * nextMap(HashMap * map) {
-    if (map == NULL ) return NULL;
+    if (map == NULL || map->size == 0) return NULL;
     long i = map->current + 1;
     while (map->buckets[i] == NULL) i++;
 
