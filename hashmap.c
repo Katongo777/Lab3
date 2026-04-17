@@ -120,11 +120,7 @@ void eraseMap(HashMap * map,  char * key) {
 Pair * firstMap(HashMap * map) {
     if (map == NULL || map->size == 0) return NULL;
     long i = 0;
-    while (map->buckets[i] == NULL)
-    { 
-        i++;
-        if (i == map->capacity) return NULL;
-    }
+    while (map->buckets[i] == NULL || map->buckets[i]->key == NULL) i++;
     map->current = i;
     Pair *currentPair = map->buckets[i];
     return currentPair;
