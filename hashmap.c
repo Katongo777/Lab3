@@ -66,7 +66,12 @@ HashMap * createMap(long capacity) {
 void insertMap(HashMap * map, char * key, void * value) {
     if(M->size >= 0.7*M->capacity) enlarge(map);
     Pair *newPair = createPair(key, value);
-    long i = searchMap(map, key);
+    long i = hash(key, map->capacity);
+    while (map->buckets[i] == NULL &&)
+    {
+        i++;
+        if (i == map->capacity) i = 0;
+    }
     map->buckets[i] = newPair;
     map->size++;
     map->current = i;
@@ -82,14 +87,13 @@ void insertMap(HashMap * map, char * key, void * value) {
 Pair * searchMap(HashMap * map,  char * key) {   
     if (map->size == 0 || map == NULL ) return NULL;
     long i = hash(key, map->capacity);
-    while (is_equal(key, map->buckets[i]->key) == 0)
+    while (map->buckets[i] == NULL && is_equal(key, map->buckets[i]->key) == 0)
     {
         i++;
-        if (map->buckets[i] == NULL) return NULL;
         if (i == map->capacity) i = 0;
     }
     Pair *buscado = map->buckets[i];
-    map->current = i;
+    if (buscado != NULL) map->current = i;
     return buscado;
 }
 

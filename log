@@ -203,3 +203,17 @@ hashmap.c:69:14: error: initialization of ‘long int’ from ‘Pair *’ makes
    69 |     long i = searchMap(map, key);
       |              ^~~~~~~~~
 754abeb
+Fri Apr 17 10:05:33 PM UTC 2026: 
+ hashmap.c | 12 ++++++++----
+ 1 file changed, 8 insertions(+), 4 deletions(-)
+Compilation failed
+In file included from test.c:5:
+hashmap.c: In function ‘insertMap’:
+hashmap.c:67:8: error: ‘M’ undeclared (first use in this function)
+   67 |     if(M->size >= 0.7*M->capacity) enlarge(map);
+      |        ^
+hashmap.c:67:8: note: each undeclared identifier is reported only once for each function it appears in
+hashmap.c:70:38: error: expected expression before ‘)’ token
+   70 |     while (map->buckets[i] == NULL &&)
+      |                                      ^
+705d930
