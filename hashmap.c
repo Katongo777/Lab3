@@ -75,13 +75,13 @@ Pair * searchMap(HashMap * map,  char * key) {
     while (strcmp(key, map->buckets[i]->key) == 0 || map->buckets[i] == NULL)
     {
         if (i == map->capacity) i = 0;
-        i++;        
+        i++;
     }
     Pair *buscado = map->buckets[i];
     map->current = i;
     return buscado;
     
-    return NULL;
+    return buscado;
 }
 
 // 4. Implemente la función void eraseMap(HashMap * map, char * key). 
