@@ -160,9 +160,9 @@ void enlarge(HashMap * map) {
     map->buckets = new_buckets;
     map->size = 0;
 
-    for(int i = 0 ; i < map->capacity ; i++)
+    for (long i = 0 ; i < map->capacity ; i++)
     {
-        if(old_buckets[i]==NULL) continue;
+        if (old_buckets[i] == NULL || old_buckets->key == NULL) continue;
         insertMap(map, old_buckets[i]->key, old_buckets[i]->value);
     }
     map->capacity = map->capacity * 2;

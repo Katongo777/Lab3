@@ -366,3 +366,14 @@ Sat Apr 18 12:23:30 AM UTC 2026:
  tests:  16|1
 total_score: 50/60
 0e57d37
+Sat Apr 18 12:26:37 AM UTC 2026: 
+ hashmap.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+Compilation failed
+In file included from test.c:5:
+hashmap.c: In function ‘enlarge’:
+hashmap.c:165:50: error: ‘old_buckets’ is a pointer to pointer; did you mean to dereference it before applying ‘->’ to it?
+  165 |         if (old_buckets[i] == NULL || old_buckets->key == NULL) continue;
+      |                                                  ^~
+      |                                       (*         )
+a9c74c1
