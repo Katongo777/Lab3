@@ -155,7 +155,7 @@ Pair * nextMap(HashMap * map) {
 //   e - Inserte los elementos válidos del arreglo old_buckets en el mapa (use la función insertMap que ya implementó).
 
 void enlarge(HashMap * map) {
-    Pair **old_buckets = map->HashArray;
+    Pair **old_buckets = map->buckets;
     Pair **new_buckets = (Pair **)malloc(sizeof(Pair *) * map->capacity * 2);
     map->buckets = new_buckets;
     map->capacity = map->capacity * 2;
