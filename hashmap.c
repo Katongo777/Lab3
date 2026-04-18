@@ -158,14 +158,14 @@ void enlarge(HashMap * map) {
     Pair **old_buckets = map->buckets;
     Pair **new_buckets = (Pair **)malloc(sizeof(Pair *) * map->capacity * 2);
     map->buckets = new_buckets;
-    map->capacity = map->capacity * 2;
     map->size = 0;
 
-    for(int i = 0; i < map->capacity; i++)
+    for(int i = 0 ; i < map->capacity ; i++)
     {
         if(old_buckets[i]==NULL) continue;
         insertMap(map, old_buckets[i]->key, old_buckets[i]->value);
     }
+    map->capacity = map->capacity * 2;
 }
 
 
